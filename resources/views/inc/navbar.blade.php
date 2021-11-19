@@ -17,13 +17,8 @@
             <li class="nav-item">
                 <a href="{{ route('get-messages') }}" class="nav-link {{ Request::is('contact/messages') ? 'active' : '' }}">Messages</a>
             </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a href="#" class="dropdown-item">Action1</a>
-                    <a href="#" class="dropdown-item">Action2</a>
-                    <a href="#" class="dropdown-item">Action3</a>
-                </div>
+            <li class="nav-item">
+                <a href="{{ route('list-books') }}" class="nav-link {{ Request::is('library') ? 'active' : '' }}">Library</a>
             </li>
         </ul>
     </div>

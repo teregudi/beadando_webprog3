@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\LibraryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,5 @@ Route::get('/about', [PagesController::class, 'getAbout'])->name('about');
 Route::get('/contact/messages', [ContactController::class, 'getMessages'])->name('get-messages');
 
 Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact-form-submit');
+
+Route::get('/library', [LibraryController::class, 'listBooks'])->name('list-books');
