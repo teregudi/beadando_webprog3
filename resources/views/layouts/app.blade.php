@@ -12,9 +12,13 @@
     @include('inc.navbar')
 
     <div class="container">
+
         @if (Request::is('/')) <!--Csak akkor include-olja, ha a főoldalon vagyunk -->
             @include('inc.showcase')
         @endif
+
+        @include('inc.messages')
+
         <div class="row">
             <div class="col-md-8 col-lg-8">
                 @yield('content')
