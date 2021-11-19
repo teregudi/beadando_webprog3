@@ -20,6 +20,8 @@ class ContactController extends Controller
     }
 
     public function getMessages() {
-        
+        $messages = Message::all();
+
+        return view('messages', ['messages' => $messages]);
     }
 }
