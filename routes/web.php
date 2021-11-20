@@ -22,8 +22,12 @@ Route::get('/contact', [PagesController::class, 'getContact'])->name('contact');
 
 Route::get('/about', [PagesController::class, 'getAbout'])->name('about');
 
+Route::get('/newbook', [PagesController::class, 'getNewbook'])->name('new-book');
+
 Route::get('/contact/messages', [ContactController::class, 'getMessages'])->name('get-messages');
 
 Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact-form-submit');
 
 Route::get('/library', [LibraryController::class, 'listBooks'])->name('list-books');
+
+Route::post('/library/submit', [LibraryController::class, 'submit'])->name('new-book-submit');
