@@ -32,5 +32,7 @@
     <footer class="text-center" id="footer">
         <p>Copyright 2021 &copy; teregudi</p>
     </footer>
+
+    @stack('scripts')
 </body>
 </html>

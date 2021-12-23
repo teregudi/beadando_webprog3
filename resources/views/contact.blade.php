@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+@push('scripts')
+<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+@endpush
+
 @section('content')
     <h1>Contact page</h1>
 
@@ -19,7 +30,7 @@
         </div>
         <div class="form-group">
             <label for="message">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+            <textarea id="editor" class="form-control" id="message" name="message"></textarea>
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
