@@ -5,3 +5,8 @@
     color: #fff;
     background: rgb(119, 119, 119);
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}

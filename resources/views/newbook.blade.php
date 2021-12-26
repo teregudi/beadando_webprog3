@@ -3,7 +3,7 @@
 @section('content')
     <h1>Új könyv hozzáadása</h1>
 
-    <form method="POST" action="{{ route('new-book-submit') }}">
+    <form method="POST" action="{{ route('new-book-submit') }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="isbn">ISBN szám</label>
@@ -24,6 +24,10 @@
         <div class="form-group">
             <label for="publisher">Kiadó</label>
             <input type="text" class="form-control" id="publisher" name="publisher">
+        </div>
+        <div class="form-group pt-3 pb-3">
+            <label for="cover">Borítókép</label>
+            <input type="file" class="form-control" id="cover" name="cover">
         </div>
         <div class="form-group">
             <label for="summary">Borítószöveg</label>

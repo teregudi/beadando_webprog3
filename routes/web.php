@@ -52,6 +52,6 @@ Route::get('/library/delete/{isbn}', [LibraryController::class, 'deleteBook'])->
 
 Route::get('/library/edit/{id}', [LibraryController::class, 'editBook'])->name('edit-book');
 
-Route::post('/library/edit/{id}', [LibraryController::class, 'submitEdit'])->name('submit-edit');
+Route::post('/library/edit/{id}', [LibraryController::class, 'submitEdit']);
 
 Route::get('/library/{id}', [LibraryController::class, 'getBook'])->name('get-book');
