@@ -13,7 +13,9 @@ class ContactController extends Controller
         $message->name = $request->input('name');
         $message->email = $request->input('email');
         $message->subject = $request->input('subject');
-        $message->message = $request->input('message');
+        $trim = str_replace('<p>', '', $request->input('message'));
+        $trim = str_replace('</p>', '', $trim);
+        $message->message = $trim;
         $message->save();
 
         return redirect()->route('home')->with('success', 'Message successfully sent!');

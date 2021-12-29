@@ -11,12 +11,14 @@
             <li class="nav-item">
                 <a href="{{ route('about') }}" class="nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
             </li>
-            <li class="nav-item">
-                <a href="{{ route('contact') }}" class="nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('get-messages') }}" class="nav-link {{ Request::is('contact/messages') ? 'active' : '' }}">Messages</a>
-            </li>
+            @auth
+                <li class="nav-item">
+                    <a href="{{ route('contact') }}" class="nav-link {{ Request::is('contact') ? 'active' : '' }}">Post a review</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('get-messages') }}" class="nav-link {{ Request::is('contact/messages') ? 'active' : '' }}">Reviews</a>
+                </li>
+            @endauth
             <li class="nav-item">
                 <a href="{{ route('list-books') }}" class="nav-link {{ Request::is('library') ? 'active' : '' }}">Library</a>
             </li>

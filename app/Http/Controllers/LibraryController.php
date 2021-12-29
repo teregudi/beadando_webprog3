@@ -63,6 +63,13 @@ class LibraryController extends Controller
         $summary = $request->input('summary');
         DB::update('update books set isbn=?, author=?, title=?, year=?, publisher=?, summary=? where id = ?',
             [$isbn, $author, $title, $year, $publisher, $summary, $id]);
+        if ($request->file('cover')) {
+            $image = $request->file('cover');
+            $fileID = uniqid();
+            $filename = "/books/{$fileID}.{$image->extension()}";
+            Image::make($image)->save(public_path("/uploads{$filename}"));
+            DB::update('update books set cover=? where id = ?', [$filename, $id]);
+        }
         return redirect()->route('edit-book')->with('success', 'Book updated successfully.');
         
     }

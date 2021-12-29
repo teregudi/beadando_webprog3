@@ -3,7 +3,7 @@
 @section('content')
     <h1>Adatok szerkesztése</h1>
 
-    <form method="POST" action="/library/edit/{{ $book->id }}">
+    <form method="POST" action="/library/edit/{{ $book->id }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="isbn">ISBN szám</label>
@@ -24,6 +24,10 @@
         <div class="form-group">
             <label for="publisher">Kiadó</label>
             <input type="text" class="form-control" id="publisher" name="publisher" value="{{ $book->publisher }}">
+        </div>
+        <div class="form-group pt-3 pb-3">
+            <label for="cover">Borítókép cseréje</label>
+            <input type="file" class="form-control" id="cover" name="cover">
         </div>
         <div class="form-group">
             <label for="summary">Borítószöveg</label>

@@ -14,8 +14,10 @@
         <li class="list-group-item">Cím: {{ $book->title }}</li>
         <li class="list-group-item">Kiadás éve: {{ $book->year }}</li>
         <li class="list-group-item">{{ $book->summary }}</li>
-        <a class="btn btn-primary" href="/library/edit/{{ $book->id }}">Szerkesztés</a>
-        <a class="btn btn-danger" onclick="return confirm('Biztos benne, hogy törli ezt a könyvet?')" 
-            href="/library/delete/{{ $book->isbn }}">Törlés</a>
+        @auth
+            <a class="btn btn-primary" href="/library/edit/{{ $book->id }}">Szerkesztés</a>
+            <a class="btn btn-danger" onclick="return confirm('Biztos benne, hogy törli ezt a könyvet?')" 
+                href="/library/delete/{{ $book->isbn }}">Törlés</a>
+        @endauth
     </ul>
 @endsection
